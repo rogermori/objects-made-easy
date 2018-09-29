@@ -36,7 +36,7 @@ console.log(isObject(new Date())); // false
 console.log(isObject(new Set())); // false
 console.log(isObject('hello')); // false
 console.log(isObject(()=>{})); // false
-console.log(isObject({})); // false
+console.log(isObject({})); // true
 ````
 #### isEmpty: Check if an object is logically empty. 
 ````
