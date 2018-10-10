@@ -19,6 +19,15 @@ const isEmpty = (obj) => {
   }
 };
 
+const hasEmpty = (objects) => {
+  if (NoU(objects)) return true;
+  if (!Array.isArray(objects)) return true;
+  for (const obj of objects) {
+    if (isEmpty(obj)) return true;
+  }
+  return false;
+};
+
 const emptyKeys = (obj) => {
   const noLuck = {success: false};
   if (NoU(obj)) return noLuck;
@@ -42,5 +51,6 @@ module.exports = {
   isObject,
   NoU,
   isEmpty,
-  emptyKeys
+  hasEmpty,
+  emptyKeys,
 };

@@ -1,5 +1,6 @@
 const NoU = require('./index').NoU;
 const isEmpty = require('./index').isEmpty;
+const hasEmpty = require('./index').hasEmpty;
 const isObject = require('./index').isObject;
 const emptyKeys = require('./index').emptyKeys;
 
@@ -34,6 +35,10 @@ const array = [
 const nonEmptyArray = array.filter((obj)=>!isEmpty(obj));
 console.log('\nisEmpty Examples');
 console.log(nonEmptyArray); // [ 1, false, { a: 1 } ]
+
+console.log('\nhasEmpty Examples');
+console.log(hasEmpty([{}, ' ', null, 1])); // true
+console.log(hasEmpty(['a', 1])); // false
 
 const instance = {
   hello: 'world',

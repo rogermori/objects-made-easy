@@ -25,7 +25,7 @@ console.log(NoU(null));  //true
 console.log(NoU(null));  //true
 console.log(NoU({}));    //false
 ````
-- isObject: Check if a variable is an object.
+### isObject: Check if a variable is an object.
 ````
 const isObject = require('objects-made-easy').isObject;
 
@@ -53,9 +53,12 @@ const array = [
   new Date(),
   {a: 1},
 ];
-
-const nonEmptyArray = array.filter((obj)=>!isEmpty(obj));
-console.log(nonEmptyArray); // [ 1, false, { a: 1 } ]
+````
+#### hasEmpty: Check if an array of object contains any logically empty element. 
+````
+const hasEmpty = require('objects-made-easy').haEmpty;
+console.log(hasEmpty([{}, ' ', null, 1])); // true
+console.log(hasEmpty(['a', 1])); // false
 ```` 
 #### emptyKeys: returns the key names of the logically empty values of an object.
 ````
