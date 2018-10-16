@@ -47,10 +47,30 @@ const emptyKeys = (obj) => {
   });
 };
 
+const project = (obj, path)=>{
+  if (isEmpty(obj) || !isObject(obj) || isEmpty(path)) {
+    return obj;
+  }
+  const arrPath = path.split('.');
+  if (isEmpty(arrPath)) {
+    return obj;
+  }
+  let attribute = obj;
+  for (const key of arrPath) {
+    if (NoU(attribute[key])) {
+      return attribute[key];
+    }
+    attribute = attribute[key];
+  }
+  return attribute;
+};
+
+
 module.exports = {
   isObject,
   NoU,
   isEmpty,
   hasEmpty,
   emptyKeys,
+  project,
 };

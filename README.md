@@ -54,6 +54,27 @@ const array = [
   {a: 1},
 ];
 ````
+#### project: fetch an object's attribute (field or key's value) by path. 
+````
+const project = require('objects-made-easy').project
+const a = {
+      b: {
+        c: {
+          d: 'deal',
+          e: 'elephant',
+          f: null,
+        },
+      },
+    };
+console.log(project(a, ''))        //a
+console.log(project(undefined,'')) //a
+console.log(project(a, 'k.p5'))    //undefined
+console.log(project(a, 'b.c.l'))   //undefined
+console.log(project(a, 'b.c.f'))   //null
+console.log(project(a, 'b.c'))     //{d: 'deal', e: 'elephant', f: null}    
+````
+
+
 #### hasEmpty: Check if an array of object contains any logically empty element. 
 ````
 const hasEmpty = require('objects-made-easy').haEmpty;
