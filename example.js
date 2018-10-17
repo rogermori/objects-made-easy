@@ -13,11 +13,11 @@ console.log('\nisObject examples');
 console.log(isObject(null)); // false
 console.log(isObject(undefined)); // false
 console.log(isObject([])); // false
-console.log(isObject(new Date())); // false
-console.log(isObject(new Set())); // false
+console.log(isObject(new Date())); // true
+console.log(isObject(new Set())); // true
 console.log(isObject('hello')); // false
-console.log(isObject(()=>{})); // false
-console.log(isObject({})); // false
+console.log(isObject(()=>{})); // true
+console.log(isObject({})); // true
 
 const array = [
   {},

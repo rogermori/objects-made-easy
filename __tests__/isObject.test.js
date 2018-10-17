@@ -1,8 +1,8 @@
 const util = require('../index');
 
 describe('isObject tests', ()=>{
-  it('[] is not an object', ()=>{
-    expect(util.isObject([])).toBe(false);
+  it('[] is an object', ()=>{
+    expect(util.isObject([])).toBe(true);
   });
   it('null is not an object', ()=>{
     expect(util.isObject(null)).toBe(false);
@@ -10,20 +10,23 @@ describe('isObject tests', ()=>{
   it('undefined is not an object', ()=>{
     expect(util.isObject(undefined)).toBe(false);
   });
-  it('new Date() is not an object', ()=>{
-    expect(util.isObject(new Date())).toBe(false);
+  it('new Date() is  an object', ()=>{
+    expect(util.isObject(new Date())).toBe(true);
   });
-  it('new Set() is not an object', ()=>{
-    expect(util.isObject(new Set())).toBe(false);
+  it('new Set() is  an object', ()=>{
+    expect(util.isObject(new Set())).toBe(true);
   });
   it(`'hello'  is not an object`, ()=>{
     expect(util.isObject('hello')).toBe(false);
   });
-  it(`()=>{}  is not an object`, ()=>{
-    expect(util.isObject(()=>{})).toBe(false);
+  it(`()=>{}  is  an object`, ()=>{
+    expect(util.isObject(()=>{})).toBe(true);
   });
   it(`{}  is  an object`, ()=>{
     expect(util.isObject({})).toBe(true);
+  });
+  it(`[]  is not an object`, ()=>{
+    expect(util.isObject([])).toBe(true);
   });
 });
 
