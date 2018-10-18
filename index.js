@@ -33,8 +33,7 @@ const hasEmpty = (objects) => {
 
 const emptyKeys = (obj) => {
   const noLuck = {success: false};
-  if (NoU(obj)) return noLuck;
-  if (typeof obj !== 'object' || Array.isArray(obj)) {
+  if (!isObject(obj) || Array.isArray(obj)) {
     return noLuck;
   };
   const keys = Object.keys(obj).reduce( (bag, prop) => {
