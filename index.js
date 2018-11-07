@@ -1,26 +1,5 @@
-const NoU = (obj) => (obj === null || obj === undefined);
+const {NoU, isObject, isEmpty, coalesce, project} = require('./lib');
 
-const isObject = (obj) => (
-  !NoU(obj) && typeof obj !== null &&
-    (typeof obj === 'object' || typeof obj === 'function')
-);
-
-const isEmpty = (obj) => {
-  if (NoU(obj)) return true;
-  switch (typeof obj) {
-    case 'number':
-    case 'boolean': return false;
-    case 'string': return obj.trim().length === 0;
-    case 'object':
-      if (Array.isArray(obj)) return obj.length === 0;
-      for (const k of Object.keys(obj)) {
-        if (!isEmpty(obj[k])) return false;
-      }
-      return true;
-    default:
-      return true;
-  }
-};
 
 const hasEmpty = (objects) => {
   if (NoU(objects)) return true;
@@ -49,24 +28,6 @@ const emptyKeys = (obj) => {
   });
 };
 
-const project = (obj, path)=>{
-  if (isEmpty(obj) || !isObject(obj) || isEmpty(path)) {
-    return obj;
-  }
-  const arrPath = path.split('.');
-  if (isEmpty(arrPath)) {
-    return obj;
-  }
-  let attribute = obj;
-  for (const key of arrPath) {
-    if (NoU(attribute[key])) {
-      return attribute[key];
-    }
-    attribute = attribute[key];
-  }
-  return attribute;
-};
-
 
 module.exports = {
   isObject,
@@ -75,4 +36,5 @@ module.exports = {
   hasEmpty,
   emptyKeys,
   project,
+  coalesce,
 };

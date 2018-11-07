@@ -31,13 +31,23 @@ const isObject = require('objects-made-easy').isObject;
 
 console.log(isObject(null)); // false
 console.log(isObject(undefined)); // false
-console.log(isObject([])); // false
-console.log(isObject(new Date())); // false
-console.log(isObject(new Set())); // false
+console.log(isObject([])); // true
+console.log(isObject(new Date())); // true
+console.log(isObject(new Set())); // true
 console.log(isObject('hello')); // false
-console.log(isObject(()=>{})); // false
+console.log(isObject(()=>{})); // true
 console.log(isObject({})); // true
+```` 
+#### coalesce: returns the first non null argument ; otherwise returns null
 ````
+const coalesce = require('objects-made-easy').coalesce;
+
+console.log(coalesce());           // null
+console.log(coalesce(null));       // null
+console.log(coalesce(undefined));  // null
+console.log(null,null,1,null);     // 1
+````
+
 #### isEmpty: Check if an object is logically empty. 
 ````
 const isEmpty = require('objects-made-easy').isEmpty;
@@ -66,12 +76,13 @@ const a = {
         },
       },
     };
-console.log(project(a, ''))        //a
-console.log(project(undefined,'')) //a
-console.log(project(a, 'k.p5'))    //undefined
-console.log(project(a, 'b.c.l'))   //undefined
-console.log(project(a, 'b.c.f'))   //null
-console.log(project(a, 'b.c'))     //{d: 'deal', e: 'elephant', f: null}    
+console.log(project(a, ''))                //a
+console.log(project(undefined,''))         //a
+console.log(project(a, 'k.p5'))            //undefined
+console.log(project(a, 'b.c.l'))           //undefined
+console.log(project(a, 'b.c.f'))           //null
+console.log(project(a, 'b.c.f','default')) //default
+console.log(project(a, 'b.c'))             //{d: 'deal', e: 'elephant', f: null}    
 ````
 
 

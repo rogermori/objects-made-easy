@@ -10,14 +10,14 @@ console.log(NoU(undefined));
 console.log(NoU({}));
 
 console.log('\nisObject examples');
-console.log(isObject(null)); // false
-console.log(isObject(undefined)); // false
-console.log(isObject([])); // false
-console.log(isObject(new Date())); // true
-console.log(isObject(new Set())); // true
-console.log(isObject('hello')); // false
-console.log(isObject(()=>{})); // true
-console.log(isObject({})); // true
+console.log('isObject(null) ', isObject(null)); // false
+console.log('isObject(undefined) ', isObject(undefined)); // false
+console.log('isObject([]) ', isObject([])); // false
+console.log('isObject(new Date())) ',isObject(new Date())); // true
+console.log('isObject(new Set()) ', isObject(new Set())); // true
+console.log(`isObject('hello') `,isObject('hello')); // false
+console.log('isObject(()=>{}) ', isObject(()=>{})); // true
+console.log('isObject({})) ',isObject({})); // true
 
 const array = [
   {},
