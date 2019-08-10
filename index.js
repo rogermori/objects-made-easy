@@ -1,4 +1,4 @@
-const {NoU, isObject, isEmpty, coalesce, project} = require('./lib');
+const {NoU, isObject, isEmpty, coalesce, project, customErrors} = require('./lib');
 
 
 const hasEmpty = (objects) => {
@@ -28,7 +28,6 @@ const emptyKeys = (obj) => {
   });
 };
 
-
 module.exports = {
   isObject,
   NoU,
@@ -37,4 +36,5 @@ module.exports = {
   emptyKeys,
   project,
   coalesce,
+  customErrors,
 };

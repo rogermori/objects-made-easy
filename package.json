@@ -1,6 +1,6 @@
 {
   "name": "objects-made-easy",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Node.js utility functions to handle objects",
   "main": "index.js",
   "scripts": {
@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/rogermori/objects-made-easy#readme",
   "devDependencies": {
-    "eslint": "^5.6.1",
+    "eslint": "^5.16.0",
     "eslint-config-google": "^0.10.0",
-    "jest": "^23.6.0",
+    "jest": "^24.8.0",
     "merge": ">=1.2.1"
   }
 }
